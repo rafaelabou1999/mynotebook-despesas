@@ -12,7 +12,7 @@ export function HeaderTitle({ children, title }: HeaderTitleProps) {
                 <div className="icon">
                     {children}
                 </div>
-                <div>
+                <div className={styles.title}>
                     <h3>{title}</h3>
                 </div>
             </div>

@@ -47,7 +47,7 @@ export function Header() {
                 </HeaderTitle>
             </section>
             <section>
-                <button onClick={handleThemeChange}>
+                <button className={styles.btnTheme} onClick={handleThemeChange}>
                     <HeaderTitle title="Themes">
                         {icons[theme]}
                     </HeaderTitle>  

@@ -1,0 +1,6 @@
+.all{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+    background-color: var(--bg-solid);
+}

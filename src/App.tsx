@@ -1,16 +1,14 @@
-import { Header } from './components/Header';
 
 import './styles/root/index.css';
 import './styles/App.css'
 
+import { Profile } from './pages/Profile';
+
 function App() {
   return (
-    <div className="all">
-      <Header/>
-      <main>
-        
-      </main>
-    </div>
+    <>
+      <Profile/>
+    </>
   )
 }
 
