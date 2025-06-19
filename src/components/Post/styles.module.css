@@ -1,0 +1,27 @@
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40%;
+}
+
+.input{
+    background-color: rgb(255, 255, 255);
+    width:400px;
+    height:35px;
+    padding:2%;
+    border-radius: .2rem;
+}
+
+.btnInput{
+    background-color: var(--light-primary);
+    height:35px;
+    padding: 0% 5%;
+    transition: all .3s ease-in;
+}
+
+.btnInput:hover{
+    filter:brightness(94%);
+}

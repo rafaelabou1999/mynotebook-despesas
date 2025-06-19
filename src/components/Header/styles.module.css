@@ -1,0 +1,19 @@
+.compContainer{
+    width:18%;
+    height:100vh;
+    background-color: var(--dark-medium);
+    color: var(--dark-light);
+    padding: 2%;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    gap:4%;
+    padding: 18% 0;
+    color: var(--solid-primary);
+}
+
+.sectionTwo{
+    padding: 22% 0 9% 0;
+}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+:root{
+    --bg-solid:#f1f1f1;
+    --solid-primary: #b6d336;
+    --light-primary:#e4e9b9;
+    --extra-light-primary:#f5f5dd;
+    --dark-medium:#212121;
+    --dark-light:#DEDEDE;
+}
