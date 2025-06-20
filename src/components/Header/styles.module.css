@@ -4,6 +4,7 @@
     background-color: var(--dark-medium);
     color: var(--dark-light);
     padding: 2%;
+    box-shadow: 1px 1px 2px #302f2f73;
 }
 
 .logo{
@@ -18,8 +19,22 @@
     padding: 22% 0 9% 0;
 }
 
+nav, nav a{
+    color: var(--bg-solid) !important;
+    text-decoration: none;
+}
+
+nav a:hover{
+    padding:2px;
+    text-decoration: underline;
+}
+
 .btnTheme{
     padding:4% 4% 0 4%;
     color: red;
     background-color: var(--solid-primary);
+}
+
+button{
+    color: #000 !important;
 }
