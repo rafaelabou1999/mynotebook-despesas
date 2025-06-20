@@ -5,6 +5,7 @@ import '../../styles/root/index.css'
 import styles from './styles.module.css';
 import { MoonIcon, PenIcon, PersonStandingIcon, Search, SunIcon } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 type ThemeProps = 'dark' | 'light';
 
@@ -34,17 +35,22 @@ export function Header() {
             </section>
 
             <section>
-                <HeaderTitle title="My Profile">
-                    <PersonStandingIcon/>
-                </HeaderTitle>
-                    
-                <HeaderTitle title="Posts">
-                    <PenIcon/>
-                </HeaderTitle>
-                    
-                <HeaderTitle title="Discover">
-                    <Search/>
-                </HeaderTitle>
+                <nav>
+                    <Link to="/">
+                        <HeaderTitle title="Posts">
+                            <PenIcon/>
+                        </HeaderTitle>
+                    </Link>   
+                    <Link to="/profile">
+                        <HeaderTitle title="My Profile">
+                          <PersonStandingIcon/>
+                        </HeaderTitle>
+                    </Link>                        
+                    <HeaderTitle title="Discover">
+                        <Search/>
+                    </HeaderTitle>
+                </nav>
+                
             </section>
             <section>
                 <button className={styles.btnTheme} onClick={handleThemeChange}>

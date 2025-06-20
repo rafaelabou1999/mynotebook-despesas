@@ -1,0 +1,31 @@
+.container{
+    margin-top:9%;
+    position: relative;
+}
+
+.banner {
+    width:50vw;
+    height:270px;
+    object-fit:cover;
+    filter: brightness(70%);
+    border: 1px solid var(--solid-primary);
+}
+
+.profile img {
+    position: absolute;
+    bottom:-10%;
+    right:37.5%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username{
+    margin-top: 5%;
+}
+
+.username {
+    text-align: center;
+}

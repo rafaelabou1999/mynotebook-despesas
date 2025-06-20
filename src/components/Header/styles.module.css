@@ -20,4 +20,6 @@
 
 .btnTheme{
     padding:4% 4% 0 4%;
+    color: red;
+    background-color: var(--solid-primary);
 }
