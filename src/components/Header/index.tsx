@@ -31,29 +31,26 @@ export function Header() {
     return (
         <div className={styles.compContainer}>
             <section className={styles.logo}>
-                <h2>My Media</h2>
+                <h2>My Notebook</h2>
             </section>
 
             <section>
                 <nav>
                     <Link to="/">
-                        <HeaderTitle title="Posts">
+                        <HeaderTitle title="Cadastro de Produto">
                             <PenIcon/>
                         </HeaderTitle>
                     </Link>   
                     <Link to="/profile">
-                        <HeaderTitle title="My Profile">
+                        <HeaderTitle title="Orçamento">
                           <PersonStandingIcon/>
                         </HeaderTitle>
                     </Link>                        
-                    <HeaderTitle title="Discover">
-                        <Search/>
-                    </HeaderTitle>
                 </nav>
                 
             </section>
             <section>
-                <button className={styles.btnTheme} onClick={handleThemeChange}>
+                <button type="submit"  className={styles.btnTheme} onClick={handleThemeChange}>
                     <HeaderTitle title="Themes">
                         {icons[theme]}
                     </HeaderTitle>  

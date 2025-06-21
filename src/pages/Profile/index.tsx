@@ -1,9 +1,11 @@
 import styles from './styles.module.css';
 
 import { Main } from "../../templates/Main";
+import { Posts } from '../../components/Posts';
 
 
 export function Profile() {
+  
     return (
         <Main>
            <section className="images">
@@ -21,6 +23,10 @@ export function Profile() {
                 <h4>25 anos</h4>
                 <h4>Rio de Janeiro, RJ</h4>
              </div>
+           </section>
+
+           <section>
+            <Posts/>
            </section>
         </Main>
     )

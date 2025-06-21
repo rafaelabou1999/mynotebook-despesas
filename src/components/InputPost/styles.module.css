@@ -1,27 +1,46 @@
 
 .container{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40%;
+    flex-direction: column;
+    margin-top: 8%;
 }
 
+.item {
+    margin-bottom: 5%;
+    font-size: 18px;
+    width: 130%;
+}
+
+.item input, select {
+    background-color: #f8f5f5;
+    border:1px solid var(--solid-primary);
+    margin-left: 1%;
+    
+}
 .input{
     background-color: rgb(255, 255, 255);
-    width:400px;
-    height:35px;
-    padding:2%;
-    border-radius: .2rem;
+    width:200px;
+    height:25px;
 }
 
+.input:focus{
+    border: 3px solid var(--solid-primary);
+}
+
+
+
 .btnInput{
-    background-color: var(--light-primary);
+    background-color: #1d1c1cdc;
+    color: var(--extra-light-primary);
+    font-weight: bold;
+    letter-spacing: .095em;
+    border-radius:  10px ;
     height:35px;
     padding: 0% 5%;
     transition: all .3s ease-in;
 }
 
 .btnInput:hover{
+    cursor: pointer;
     filter:brightness(94%);
 }

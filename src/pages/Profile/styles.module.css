@@ -4,7 +4,7 @@
 }
 
 .banner {
-    width:50vw;
+    width:25vw;
     height:270px;
     object-fit:cover;
     filter: brightness(70%);
@@ -14,7 +14,7 @@
 .profile img {
     position: absolute;
     bottom:-10%;
-    right:37.5%;
+    right:27%;
     transform: translateX(-50%);
     width: 120px;
     height: 120px;
