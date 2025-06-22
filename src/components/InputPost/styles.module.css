@@ -1,5 +1,6 @@
 
 .container{
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 8%;
@@ -27,9 +28,12 @@
     border: 3px solid var(--solid-primary);
 }
 
-
-
 .btnInput{
+    position: absolute;
+    right:30%;
+    bottom:-25%;
+    transform: translateX(-50%);
+    width:150px !important;
     background-color: #1d1c1cdc;
     color: var(--extra-light-primary);
     font-weight: bold;

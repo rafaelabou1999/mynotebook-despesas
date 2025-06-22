@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
 import { Posts } from '../Posts';
@@ -9,6 +9,19 @@ export function InputPost() {
     const [inputValue, setInputValue] = useState<string>('');
     const [submittedBtn, setSubmittedBtn] = useState<boolean>(false);
     
+    const [productName, setProductName] = useState<string>(():string => {
+      const stored = localStorage.getItem('postData');
+      return stored ? stored : 'not found'; 
+    });
+    const [productUtility, setProductUtility] = useState<string>(():string => {
+      const stored = localStorage.getItem('postData');
+      return stored ? stored : 'not found'; 
+    });
+    const [productValue, setProductValue] = useState<number>(():number => {
+      const stored = localStorage.getItem('postData');
+      return stored ? Number(stored) : 0; 
+    });
+
     function handleValueChange(e){
       setInputValue(e.target.value);
     }
@@ -16,6 +29,25 @@ export function InputPost() {
     function handleSubmitBtn(){
       setSubmittedBtn(!submittedBtn);
     }
+
+    function handleOptionSelection(e) {
+      setProductUtility(e.target.value);
+    }
+
+    function handleValueNumber(e){
+        setProductValue(e.target.value);
+        return Number(productValue);
+    }
+
+    useEffect(() => {
+      setProductName(inputValue);
+      localStorage.setItem('productName', productName);
+
+      localStorage.setItem('productUtility', productUtility);
+
+      localStorage.setItem('productValue', productValue);
+
+    }, [submittedBtn])
 
     return (
         <div className={styles.container}>
@@ -25,7 +57,7 @@ export function InputPost() {
           </div>
           <div className={styles.item}>
             <label>Utilidade:</label>
-            <select name="" id="">
+            <select name="" id="" onClick={handleOptionSelection}>
               <option value="lazer">Lazer</option>
               <option value="trabalho">Trabalho</option>
               <option value="alimentação">Alimentação</option>
@@ -33,13 +65,19 @@ export function InputPost() {
           </div>
          <div className={styles.item}>
            <label htmlFor="">Valor:</label>
-           <input type="number"/>
+           <input type="number" value={productValue} onChange={handleValueNumber}/>
          </div>
           
        
           <input className={styles.btnInput} type="button" value="Enviar" onClick={handleSubmitBtn}/> 
 
-          <MyContext.Provider value={{inputValue ,submittedBtn} }>
+{
+  productUtility
+}
+{
+  productValue
+}
+         <MyContext.Provider value={{productName ,submittedBtn} }>
             <Posts/>
           </MyContext.Provider>     
         </div>
