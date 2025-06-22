@@ -10,20 +10,21 @@ export function InputPost() {
     const [submittedBtn, setSubmittedBtn] = useState<boolean>(false);
     
     const [productName, setProductName] = useState<string>(():string => {
-      const stored = localStorage.getItem('postData');
+      const stored = localStorage.getItem('productName');
       return stored ? stored : 'not found'; 
     });
     const [productUtility, setProductUtility] = useState<string>(():string => {
-      const stored = localStorage.getItem('postData');
+      const stored = localStorage.getItem('productUtility');
       return stored ? stored : 'not found'; 
     });
     const [productValue, setProductValue] = useState<number>(():number => {
-      const stored = localStorage.getItem('postData');
+      const stored = localStorage.getItem('productValue');
       return stored ? Number(stored) : 0; 
     });
 
     function handleValueChange(e){
       setInputValue(e.target.value);
+      setProductName(inputValue);
     }
 
     function handleSubmitBtn(){
@@ -40,7 +41,6 @@ export function InputPost() {
     }
 
     useEffect(() => {
-      setProductName(inputValue);
       localStorage.setItem('productName', productName);
 
       localStorage.setItem('productUtility', productUtility);
