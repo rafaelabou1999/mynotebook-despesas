@@ -1,33 +1,35 @@
 import styles from './styles.module.css';
-
 import { Main } from "../../templates/Main";
-import { Posts } from '../../components/Posts';
-
+import { useLocation } from 'react-router-dom';
 
 export function Profile() {
-  
-    return (
-        <Main>
-           <section className="images">
-             <div className={styles.container}>
-                <div className={styles.banner}>
-                </div>
-                <div className={styles.profile}>
-                    <img src="https://cdn.pixabay.com/photo/2022/12/24/21/14/portrait-7676482_1280.jpg"/>
-                </div>
-             </div>
-           </section>
-           <section className="bio">
-             <div className={styles.username}>
-                <h2>Rafaela Bourdette</h2>
-                <h4>25 anos</h4>
-                <h4>Rio de Janeiro, RJ</h4>
-             </div>
-           </section>
-
-           <section>
-            <Posts/>
-           </section>
-        </Main>
-    )
+  const { state } = useLocation();
+    if (!state || !Array.isArray(state)) {
+    return <p>Nenhum produto encontrado.</p>;
+  }
+  console.log(state);
+  return (
+    <Main>
+      <section className={styles.list}>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Utilidade</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            {state.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.utility}</td>
+                <td>R$ {item.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    </Main>
+  );
 }

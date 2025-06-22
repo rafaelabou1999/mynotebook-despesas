@@ -2,13 +2,27 @@ import { createContext, useEffect, useState } from 'react';
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
 import { Posts } from '../Posts';
+import { useNavigate } from 'react-router-dom';
+
+
+type ProdutoProps = {
+  name: string;
+  utility: string;
+  value: number | string;
+}
 
 export const MyContext = createContext('');
 
 export function InputPost() {
-    const [inputValue, setInputValue] = useState<string>('');
+    const navigate = useNavigate();
+
     const [submittedBtn, setSubmittedBtn] = useState<boolean>(false);
-    
+   
+    const [allProducts, setAllProducts] = useState<ProdutoProps[]>(() => {
+      const storedItem = localStorage.getItem('allProducts');
+      return storedItem ? JSON.parse(storedItem) : [];
+    });
+
     const [productName, setProductName] = useState<string>(():string => {
       const stored = localStorage.getItem('productName');
       return stored ? stored : 'not found'; 
@@ -21,23 +35,42 @@ export function InputPost() {
       const stored = localStorage.getItem('productValue');
       return stored ? Number(stored) : 0; 
     });
+  
+    
 
-    function handleValueChange(e){
-      setInputValue(e.target.value);
-      setProductName(inputValue);
+
+
+    function handleValueChange(e: React.ChangeEvent<HTMLInputElement>){
+      setProductName(e.target.value);
     }
 
     function handleSubmitBtn(){
-      setSubmittedBtn(!submittedBtn);
+    
+      const nameInput = document.querySelector('input[name="post"]') as HTMLInputElement;
+      const utilitySelect = document.querySelector('select') as HTMLSelectElement;
+      const valueInput = document.querySelector('input[type="number"]') as HTMLInputElement;
+
+      const newItem = {
+        name: nameInput.value,
+        utility: utilitySelect.value,
+        value: valueInput.value,
+      }
+      
+      setAllProducts(prev => {
+        const updatedList = [...prev, newItem];
+        navigate('/profile', {
+                state: updatedList
+        });
+        return updatedList;
+      });
     }
 
-    function handleOptionSelection(e) {
+    function handleOptionSelection(e: React.ChangeEvent<HTMLInputElement>) {
       setProductUtility(e.target.value);
     }
 
-    function handleValueNumber(e){
-        setProductValue(e.target.value);
-        return Number(productValue);
+    function handleValueNumber(e: React.ChangeEvent<HTMLInputElement>){
+        setProductValue(Number(e.target.value));
     }
 
     useEffect(() => {
@@ -45,15 +78,17 @@ export function InputPost() {
 
       localStorage.setItem('productUtility', productUtility);
 
-      localStorage.setItem('productValue', productValue);
+      localStorage.setItem('productValue', String(productValue)); 
 
+      localStorage.setItem('allProducts', JSON.stringify(allProducts));
     }, [submittedBtn])
 
+  console
     return (
         <div className={styles.container}>
           <div className={styles.item}>
             <label>Nome do Produto: </label>
-            <input className={styles.input} type="text" name="post" value={inputValue} onChange={handleValueChange}/>
+            <input className={styles.input} type="text" name="post" value={productName} onChange={handleValueChange}/>
           </div>
           <div className={styles.item}>
             <label>Utilidade:</label>
@@ -68,18 +103,14 @@ export function InputPost() {
            <input type="number" value={productValue} onChange={handleValueNumber}/>
          </div>
           
-       
+       <div>
           <input className={styles.btnInput} type="button" value="Enviar" onClick={handleSubmitBtn}/> 
+       </div>
 
-{
-  productUtility
-}
-{
-  productValue
-}
-         <MyContext.Provider value={{productName ,submittedBtn} }>
+         <MyContext.Provider value={{productName , productUtility, productValue, submittedBtn} }>
             <Posts/>
           </MyContext.Provider>     
+          
         </div>
     );
 }
