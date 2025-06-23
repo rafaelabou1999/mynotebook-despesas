@@ -11,7 +11,7 @@ export function Profile() {
   return (
     <Main>
       <section className={styles.list}>
-        <table border="1">
+        <table border={1}>
           <thead>
             <tr>
               <th>Produto</th>
