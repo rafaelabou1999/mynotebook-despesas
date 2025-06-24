@@ -1,7 +1,7 @@
-import { createContext, useEffect, useRef, useState } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
-import { Posts } from '../Posts';
+//import { Posts } from '../Posts';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -11,7 +11,7 @@ type ProdutoProps = {
   value: number | string;
 }
 
-export const MyContext = createContext<string | number | boolean>('');
+//export const MyContext = createContext<string | number | boolean>('');
 
 export function InputPost() {
     const navigate = useNavigate();
@@ -39,11 +39,6 @@ export function InputPost() {
       return stored ? Number(stored) : 0; 
     });
   
-
-    function handleValueChange(e: React.ChangeEvent<HTMLInputElement>){
-      setProductName(e.target.value);
-    }
-
     function handleSubmitBtn(){
       const newItem = {
         name: nameRef.current?.value || '',
@@ -64,14 +59,6 @@ export function InputPost() {
       setSubmittedBtn(false);
     }
 
-    function handleOptionSelection(e: React.ChangeEvent<HTMLInputElement>) {
-      setProductUtility(e.target.value);
-    }
-
-    function handleValueNumber(e: React.ChangeEvent<HTMLInputElement>){
-        setProductValue(Number(e.target.value));
-    }
-
     useEffect(() => {
       localStorage.setItem('productName', productName);
 
@@ -80,18 +67,18 @@ export function InputPost() {
       localStorage.setItem('productValue', String(productValue)); 
 
       localStorage.setItem('allProducts', JSON.stringify(allProducts));
-    }, [submittedBtn])
+    }, [allProducts])
 
   
     return (
         <div className={styles.container}>
           <div className={styles.item}>
             <label>Nome do Produto: </label>
-            <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={handleValueChange}/>
+            <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={e => setProductName(e.target.value)}/>
           </div>
           <div className={styles.item}>
             <label>Utilidade:</label>
-            <select ref={utilityRef} name="" id="" onClick={handleOptionSelection}>
+            <select ref={utilityRef} name="" id="" onChange={e => setProductUtility(e.target.value)}>
               <option value="lazer">Lazer</option>
               <option value="trabalho">Trabalho</option>
               <option value="alimentação">Alimentação</option>
@@ -99,16 +86,14 @@ export function InputPost() {
           </div>
          <div className={styles.item}>
            <label htmlFor="">Valor:</label>
-           <input ref={valueRef} type="number" value={productValue} onChange={handleValueNumber}/>
+           <input ref={valueRef} type="number" value={productValue} onChange={e => setProductValue(Number(e.target.value))}/>
          </div>
           
        <div>
           <input className={styles.btnInput} type="button" value="Enviar" onClick={handleSubmitBtn}/> 
        </div>
 
-         <MyContext.Provider value={{productName , productUtility, productValue, submittedBtn} }>
-            <Posts/>
-          </MyContext.Provider>     
+           
           
         </div>
     );
