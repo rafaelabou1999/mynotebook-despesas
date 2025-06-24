@@ -61,11 +61,8 @@ export function InputPost() {
 
     useEffect(() => {
       localStorage.setItem('productName', productName);
-
       localStorage.setItem('productUtility', productUtility);
-
       localStorage.setItem('productValue', String(productValue)); 
-
       localStorage.setItem('allProducts', JSON.stringify(allProducts));
     }, [allProducts])
 

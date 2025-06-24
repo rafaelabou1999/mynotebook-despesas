@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 export function Profile() {
   const { state } = useLocation();
     if (!state || !Array.isArray(state)) {
-    return <p>Nenhum produto encontrado.</p>;
+    return <Main><p className={styles.noProduct}>Ops! 🪹 Você ainda não cadastrou nenhum produto.</p></Main>;
   }
   console.log(state);
   return (

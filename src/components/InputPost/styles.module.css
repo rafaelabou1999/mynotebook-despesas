@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 8%;
+    font-weight: 600;
+    color:rgba(102, 102, 102, 0.904);
 }
 
 .item {
