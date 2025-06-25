@@ -28,11 +28,11 @@ export function InputPost() {
 
     const [productName, setProductName] = useState<string>(():string => {
       const stored = localStorage.getItem('productName');
-      return stored ? stored : 'not found'; 
+      return stored ? stored : ''; 
     });
     const [productUtility, setProductUtility] = useState<string>(():string => {
       const stored = localStorage.getItem('productUtility');
-      return stored ? stored : 'not found'; 
+      return stored ? stored : ''; 
     });
     const [productValue, setProductValue] = useState<number>(():number => {
       const stored = localStorage.getItem('productValue');
@@ -45,16 +45,24 @@ export function InputPost() {
         utility: utilityRef.current?.value || '',
         value: valueRef.current?.value || 0,
       }
-     
-      const updatedList = [...allProducts, newItem];
 
-      setSubmittedBtn(true);
+      if(newItem.name === '' || newItem.utility === '' || newItem.value === 0){
+        console.log('Por favor, preencha todos os campos')
+        return;
 
-      setAllProducts(updatedList);
+      } else {
+        const updatedList = [...allProducts, newItem];
+        
+        setSubmittedBtn(true);
 
-      navigate('/profile', {
-          state: updatedList
+        setAllProducts(updatedList);
+        localStorage.setItem('allProducts', JSON.stringify(allProducts));
+
+        navigate('/profile', {
+                state: updatedList
         });
+      }
+    
       
       setSubmittedBtn(false);
     }
@@ -63,7 +71,6 @@ export function InputPost() {
       localStorage.setItem('productName', productName);
       localStorage.setItem('productUtility', productUtility);
       localStorage.setItem('productValue', String(productValue)); 
-      localStorage.setItem('allProducts', JSON.stringify(allProducts));
     }, [allProducts])
 
   
@@ -71,7 +78,7 @@ export function InputPost() {
         <div className={styles.container}>
           <div className={styles.item}>
             <label>Nome do Produto: </label>
-            <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={e => setProductName(e.target.value)}/>
+            <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={e => setProductName(e.target.value)} required/>
           </div>
           <div className={styles.item}>
             <label>Utilidade:</label>
@@ -83,7 +90,7 @@ export function InputPost() {
           </div>
          <div className={styles.item}>
            <label htmlFor="">Valor:</label>
-           <input ref={valueRef} type="number" value={productValue} onChange={e => setProductValue(Number(e.target.value))}/>
+           <input ref={valueRef} type="number" value={productValue} onChange={e => setProductValue(Number(e.target.value))} required/>
          </div>
           
        <div>

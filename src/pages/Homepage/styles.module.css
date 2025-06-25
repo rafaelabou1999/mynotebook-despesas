@@ -22,14 +22,8 @@
     object-fit: cover;
 }
 
-.username{
-    margin-top: 5%;
-}
-
-.username {
-    text-align: center;
-}
 
 .info{
-    margin-top: 12%;
+    margin-top: 90px;
+    font-size: 16.5px;
 }
