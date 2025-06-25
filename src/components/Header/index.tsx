@@ -3,11 +3,12 @@ import { HeaderTitle } from '../HeaderTitle/index';
 
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
-import { MoonIcon, PenIcon, PersonStandingIcon, Search, SunIcon } from 'lucide-react';
-import { useEffect, useState, type ReactNode } from 'react';
+import { MoonIcon, PenIcon, PersonStandingIcon, SunIcon } from 'lucide-react';
+import { useContext, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../../theme/ThemeProvider';
 
-type ThemeProps = 'dark' | 'light';
+export type ThemeProps = 'dark' | 'light';
 
 const icons: Record<ThemeProps,ReactNode> = {
     dark: <SunIcon/>,
@@ -15,20 +16,13 @@ const icons: Record<ThemeProps,ReactNode> = {
 }
 
 export function Header() {
-    const [theme, setTheme] = useState<ThemeProps>((): ThemeProps => {
-        const themeStorage = localStorage.getItem('theme') as ThemeProps || 'light';
-        return themeStorage;
-    });
-    
-    function handleThemeChange(){
-       setTheme(theme === 'dark' ? 'light' : 'dark');
-    }
+  const context = useContext(ThemeContext);
+  if(!context) throw new Error('ThemeContext must be used within ThemeProvider');
 
-    useEffect(() => {
-       localStorage.setItem('theme', theme);
-    }, [theme])
-   
-    return (
+  const {theme, handleThemeChange} = context;
+
+  
+  return(
         <div className={styles.compContainer}>
             <section className={styles.logo}>
                 <h2>My Notebook</h2>

@@ -12,3 +12,12 @@
     --dark-medium:#212121;
     --dark-light:#DEDEDE;
 }
+
+:root[data-theme="dark"]{
+  background-color: var(--bg-solid);
+}
+:root[data-theme="light"]{
+  background-color: var(--bg-solid);
+  color: rgb(27, 27, 27);
+}
+

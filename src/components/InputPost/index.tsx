@@ -1,9 +1,8 @@
-import {  useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
 //import { Posts } from '../Posts';
 import { useNavigate } from 'react-router-dom';
-
 
 type ProdutoProps = {
   name: string;
@@ -11,7 +10,6 @@ type ProdutoProps = {
   value: number | string;
 }
 
-//export const MyContext = createContext<string | number | boolean>('');
 
 export function InputPost() {
     const navigate = useNavigate();
@@ -56,22 +54,19 @@ export function InputPost() {
         setSubmittedBtn(true);
 
         setAllProducts(updatedList);
-        localStorage.setItem('allProducts', JSON.stringify(allProducts));
+        localStorage.setItem('allProducts', JSON.stringify(updatedList));
 
         navigate('/profile', {
-                state: updatedList
+                state: allProducts
         });
       }
     
-      
       setSubmittedBtn(false);
     }
 
-    useEffect(() => {
-      localStorage.setItem('productName', productName);
-      localStorage.setItem('productUtility', productUtility);
-      localStorage.setItem('productValue', String(productValue)); 
-    }, [allProducts])
+    localStorage.setItem('productName', productName);
+    localStorage.setItem('productUtility', productUtility);
+    localStorage.setItem('productValue', String(productValue)); 
 
   
     return (
@@ -95,10 +90,7 @@ export function InputPost() {
           
        <div>
           <input className={styles.btnInput} type="button" value="Enviar" onClick={handleSubmitBtn}/> 
-       </div>
-
-           
-          
+       </div>      
         </div>
     );
 }
