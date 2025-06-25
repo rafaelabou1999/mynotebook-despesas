@@ -15,3 +15,9 @@ footer{
     font-weight: 600;
     width:100%;
 }
+
+@media screen and (max-width: 1060px) {
+    .all{
+       flex-direction: column;
+    }
+}
