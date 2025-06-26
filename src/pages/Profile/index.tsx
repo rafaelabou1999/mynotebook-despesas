@@ -2,9 +2,11 @@ import styles from './styles.module.css';
 import { Main } from "../../templates/Main";
 import { useEffect, useState } from 'react';
 import { Trash2Icon } from 'lucide-react';
+import type { ProdutoProps } from '../../components/InputPost';
+
 
 export function Profile() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProdutoProps[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem('allProducts');
@@ -40,7 +42,7 @@ export function Profile() {
             <tr>
               <th>Produto</th>
               <th>Utilidade</th>
-              <th colspan={2}>Preço</th>
+              <th colSpan={2}>Preço</th>
             </tr>
           </thead>
           <tbody>
@@ -48,13 +50,13 @@ export function Profile() {
               <tr key={index}>
                 <td >{item.name}</td>
                 <td>{item.utility}</td>
-                <td colspan={2} >R$ {item.value}</td>
+                <td colSpan={2} >R$ {item.value}</td>
                 <td className={styles.deleteProduct} onClick={() => handleDelete(index)}><Trash2Icon/></td>
               </tr>
             ))}
             <tr >
               <td colSpan={2} className={`${styles.occult} ${styles.total}`}>Total:</td>
-              <td colsSpan={2} className={styles.finalValue}>R$ {sumValue}</td>
+              <td colSpan={2} className={styles.finalValue}>R$ {sumValue}</td>
             </tr>
           </tbody>
         </table>

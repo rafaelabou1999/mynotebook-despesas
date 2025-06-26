@@ -3,8 +3,8 @@ import { HeaderTitle } from '../HeaderTitle/index';
 
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
-import { MoonIcon, PenIcon, PersonStandingIcon, SunIcon, TriangleIcon } from 'lucide-react';
-import { useContext, useEffect, useState, type ReactNode } from 'react';
+import { MoonIcon, PenIcon, PersonStandingIcon, SunIcon } from 'lucide-react';
+import { useContext,  useState, type ReactNode } from 'react';
 
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../../theme/ThemeProvider';

@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
 //import { Posts } from '../Posts';
 import { useNavigate } from 'react-router-dom';
 
-type ProdutoProps = {
+export type ProdutoProps = {
   name: string;
   utility: string;
   value: number | string;
@@ -68,7 +68,7 @@ export function InputPost() {
     localStorage.setItem('productUtility', productUtility);
     localStorage.setItem('productValue', String(productValue)); 
 
-  
+  console.log(submittedBtn)
     return (
         <div className={styles.container}>
           <div className={styles.item}>

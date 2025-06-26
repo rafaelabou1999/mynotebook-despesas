@@ -118,6 +118,7 @@ button{
         color: var(--dark-medium) !important;
         border: 1px solid #c4bebe;
         border-radius: 2px;
+        z-index: 10000;
     }
 
     .menuTitle{

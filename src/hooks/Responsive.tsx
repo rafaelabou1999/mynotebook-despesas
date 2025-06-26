@@ -45,7 +45,7 @@ export function useScreenSize(
   const [screenSize, setScreenSize] = useState<ScreenSize>(getSize);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: number;
     
     const handleResize = () => {
       clearTimeout(timeoutId);

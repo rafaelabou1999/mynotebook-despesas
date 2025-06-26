@@ -10,7 +10,11 @@ interface ThemeContextType {
     handleThemeChange: () => void;
 }
 
-export function ThemeProvider({children}) {
+interface ThemeProviderProps{
+    children: React.ReactNode;
+}
+
+export function ThemeProvider({children}: ThemeProviderProps) {
 
     const [theme, setTheme] = useState<ThemeProps>((): ThemeProps => {
         const themeStorage = localStorage.getItem('theme') as ThemeProps || 'light';
@@ -32,7 +36,7 @@ export function ThemeProvider({children}) {
 
     return (
         <ThemeContext.Provider value={{theme, handleThemeChange}}>
-        {children}
+            {children}
         </ThemeContext.Provider>
     )
 }
