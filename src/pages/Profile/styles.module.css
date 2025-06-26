@@ -64,7 +64,12 @@ td{
 
 @media screen and (max-width: 640px) {
     th,td{
-      padding:  2.5vw;
+      padding:  2.8vw;
+      font-size: 15px;
+    }
+
+    .finalValue{
+        font-size: 17px !important;
     }
 
     table{

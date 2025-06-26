@@ -34,10 +34,12 @@ export function Header() {
 
   return(
         <div className={styles.compContainer}>
-            <section className={styles.logo}>
+            <Link to="/" className={styles.linkLogo}>
+              <section className={styles.logo}>
                 <h2>My Notebook</h2>
-            </section>
-
+              </section>
+            </Link>
+        
         <div className={styles.rightMenu}>  
         {isMediumOrLarger ? (
          <section >

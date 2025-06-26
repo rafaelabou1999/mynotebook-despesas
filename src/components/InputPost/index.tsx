@@ -32,16 +32,16 @@ export function InputPost() {
       const stored = localStorage.getItem('productUtility');
       return stored ? stored : ''; 
     });
-    const [productValue, setProductValue] = useState<number>(():number => {
+    const [productValue, setProductValue] = useState<string>(():string => {
       const stored = localStorage.getItem('productValue');
-      return stored ? Number(stored) : 0; 
+      return stored ? stored : ''; 
     });
   
     function handleSubmitBtn(){
       const newItem = {
         name: nameRef.current?.value || '',
         utility: utilityRef.current?.value || '',
-        value: valueRef.current?.value || 0,
+        value: Number(valueRef.current?.value || 0),
       }
 
       if(newItem.name === '' || newItem.utility === '' || newItem.value === 0){
@@ -85,7 +85,12 @@ export function InputPost() {
           </div>
          <div className={styles.item}>
            <label htmlFor="">Valor:</label>
-           <input ref={valueRef} type="number" value={productValue} onChange={e => setProductValue(Number(e.target.value))} required/>
+           <input ref={valueRef} type="number" value={productValue} onChange={e => {
+                const val = e.target.value;
+                if (/^\d*$/.test(val)) {
+                  setProductValue(val);
+                }
+           }} required/>
          </div>
           
        <div>
