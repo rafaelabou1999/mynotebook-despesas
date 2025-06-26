@@ -7,10 +7,12 @@ import { Main } from "../../templates/Main";
 export function Homepage() {
     return (
         <Main>
-            <div className={styles.info}>
-                <h2>Cadastre o seu produto aqui e mantenha seu orçamento em dia</h2>
-            </div>
-           <InputPost/>
+            <div className={styles.container}>
+                <div className={styles.info}>
+                    <h2>Cadastre o seu produto aqui e mantenha suas despesas em dia</h2>
+                </div>
+                <InputPost/>
+            </div>   
         </Main>
     )
 }

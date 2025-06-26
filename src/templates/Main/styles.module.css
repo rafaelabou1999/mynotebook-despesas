@@ -20,4 +20,9 @@ footer{
     .all{
        flex-direction: column;
     }
+
+    footer{
+      top:50rem;
+      left: 70%;
+    }
 }

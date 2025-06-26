@@ -60,3 +60,26 @@ td{
     background-color: #ebeaea;
     border: 1px solid #cfcdcd;
 }
+
+
+@media screen and (max-width: 768px) {
+    th,td{
+      padding: 8px 25px;
+    }
+
+    table{
+         position: absolute;
+      left:50%;
+      transform: translateX(-50%);
+    }
+
+    .list{
+        margin-top:10px;
+    }
+
+    .noProduct{
+        margin-top: -50px;
+        font-size: 22px;
+        padding:5%;
+    }
+}

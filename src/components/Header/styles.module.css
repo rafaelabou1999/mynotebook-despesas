@@ -139,5 +139,7 @@ button{
 
     }
 
-    
+    :root[data-theme="dark"] nav a{
+        color:var(--dark-medium) !important;
+    }
 }
