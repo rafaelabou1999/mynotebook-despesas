@@ -45,18 +45,18 @@ export function Header() {
          <section >
              <h2 className={styles.menuTitle} onClick={handleMenu}>MENU </h2>
              <div  className={isActive ? `${styles.display} ${styles.triangle}` : `${styles.hidden}`}></div>
-             {isActive && <nav className={isActive ? `${styles.displayMenu}` : `${styles.hidden}`}>
+              <nav className={ `${isActive ? styles.displayMenu : styles.hidden} ${styles.menuMobile}`}>
                     <Link to="/">
-                        <HeaderTitle title="Cadastro de Produto">
+                        <HeaderTitle title="Cadastro de Despesa">
                             <PenIcon/>
                         </HeaderTitle>
                     </Link>   
                     <Link to="/profile">
-                        <HeaderTitle title="Orçamento">
+                        <HeaderTitle title="Lista de Despesas">
                           <PersonStandingIcon/>
                         </HeaderTitle>
                     </Link>                        
-                </nav>}   
+                </nav>
             </section>
         ) :   (
            <section>
@@ -67,7 +67,7 @@ export function Header() {
                         </HeaderTitle>
                     </Link>   
                     <Link to="/profile">
-                        <HeaderTitle title="Orçamento">
+                        <HeaderTitle title="Lista de Despesas">
                           <PersonStandingIcon/>
                         </HeaderTitle>
                     </Link>                        

@@ -64,7 +64,7 @@ td{
 
 @media screen and (max-width: 640px) {
     th,td{
-      padding:  2.8vw;
+      padding: 8px 3.2vw;
       font-size: 15px;
     }
 

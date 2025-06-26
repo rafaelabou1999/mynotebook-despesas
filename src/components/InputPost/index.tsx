@@ -72,7 +72,7 @@ export function InputPost() {
     return (
         <div className={styles.container}>
           <div className={styles.item}>
-            <label>Nome do Produto: </label>
+            <label>Nome da Despesa: </label>
             <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={e => setProductName(e.target.value)} required/>
           </div>
           <div className={styles.item}>
