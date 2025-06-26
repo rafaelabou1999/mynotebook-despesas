@@ -23,9 +23,9 @@ footer{
     }
 
     footer{
-      top:50rem;
-      left: 50%;
-      transform: translateX(-50%);
+      top:48.5rem;
+      left: 180px;
       padding: 12%;
+      text-align: center;
     }
 }
