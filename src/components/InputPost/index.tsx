@@ -93,8 +93,19 @@ export function InputPost() {
            }} required/>
          </div>
           
+      
+      
+      
        <div>
           <input className={styles.btnInput} type="button" value="Enviar" onClick={handleSubmitBtn}/> 
+        
+        <div>
+          {(utilityRef.current.value === '' || nameRef.current.value === '' || valueRef.current.value === 0) ?
+        (
+        <p className={styles.validateInput}>*Por favor, preencha todos os campos</p>
+        ) : ''}
+        </div>
+       
        </div>      
         </div>
     );

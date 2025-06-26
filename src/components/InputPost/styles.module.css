@@ -51,6 +51,11 @@
     filter:brightness(94%);
 }
 
+.validateInput{
+    font-size: 11.5px;
+    color:rgba(29, 29, 29, 0.904);
+}
+
 @media screen and (max-width:640px) {
     .input{
         width:100px;
@@ -61,4 +66,10 @@
         right:30%;
         transform: translateX(-50%);
     }
+
+    .validateInput{
+        font-size: 11.5px;
+        margin-top: .5%;
+      }
+
 }
