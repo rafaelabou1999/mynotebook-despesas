@@ -5,7 +5,7 @@ import { Trash2Icon } from 'lucide-react';
 import type { ProdutoProps } from '../../components/InputPost';
 
 
-export function Profile() {
+export function Despesas() {
   const [products, setProducts] = useState<ProdutoProps[]>([]);
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export function Profile() {
         <table border={1}>
           <thead>
             <tr>
-              <th>Produto</th>
+              <th>Despesa</th>
               <th>Utilidade</th>
-              <th colSpan={2}>Preço</th>
+              <th colSpan={3}>Preço</th>
             </tr>
           </thead>
           <tbody>
@@ -51,12 +51,12 @@ export function Profile() {
                 <td >{item.name}</td>
                 <td>{item.utility}</td>
                 <td colSpan={2} >R$ {item.value}</td>
-                <td className={styles.deleteProduct} onClick={() => handleDelete(index)}><Trash2Icon/></td>
+                <td  className={styles.deleteProduct} onClick={() => handleDelete(index)}><Trash2Icon/></td>
               </tr>
             ))}
             <tr >
               <td colSpan={2} className={`${styles.occult} ${styles.total}`}>Total:</td>
-              <td colSpan={2} className={styles.finalValue}>R$ {sumValue}</td>
+              <td colSpan={3} className={styles.finalValue}>R$ {sumValue}</td>
             </tr>
           </tbody>
         </table>
