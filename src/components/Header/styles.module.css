@@ -22,6 +22,7 @@
 nav, nav a{
     color: var(--bg-solid) !important;
     text-decoration: none;
+    font-size: 13px;
 }
 
 nav a:hover{
@@ -29,7 +30,7 @@ nav a:hover{
 }
 
 .btnTheme{
-    padding:4% 4% 0 4%;
+    padding:4% 2% 0 4%;
     color: red;
     background-color: var(--solid-primary);
 }
@@ -68,7 +69,7 @@ button{
     background-color: blue;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
     .compContainer{
     width:100vw;
     height:10vh;

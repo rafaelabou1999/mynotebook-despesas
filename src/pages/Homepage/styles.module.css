@@ -25,10 +25,10 @@
 
 .info{
     margin-top: 90px;
-    font-size: 16.5px;
+    font-size: 14.5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
     .container{
         padding: 5%;
         position: absolute;

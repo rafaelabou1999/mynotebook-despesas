@@ -10,7 +10,7 @@
 
 .item {
     margin-bottom: 5%;
-    font-size: 18px;
+    font-size: 13px;
     width: 130%;
 }
 
@@ -35,18 +35,30 @@
     right:30%;
     bottom:-25%;
     transform: translateX(-50%);
-    width:150px !important;
+    width:80px !important;
     background-color: #1d1c1cdc;
     color: var(--extra-light-primary);
     font-weight: bold;
     letter-spacing: .095em;
     border-radius:  10px ;
     height:35px;
-    padding: 0% 5%;
     transition: all .3s ease-in;
+    text-align: center;
 }
 
 .btnInput:hover{
     cursor: pointer;
     filter:brightness(94%);
+}
+
+@media screen and (max-width:640px) {
+    .input{
+        width:100px;
+    }
+
+    .btnInput{
+        bottom:-50%;
+        right:0%;
+        transform: translateX(-50%);
+    }
 }

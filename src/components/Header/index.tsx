@@ -25,7 +25,7 @@ export function Header() {
 
   const [isActive, setActive]= useState(false);
   const screenSize = useScreenSize();
-  const isMediumOrLarger = screenSize >= 'md';
+  const isMediumOrLarger = screenSize === 'xs';
 
 
    function handleMenu(){
