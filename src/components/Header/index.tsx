@@ -3,7 +3,7 @@ import { HeaderTitle } from '../HeaderTitle/index';
 
 import '../../styles/root/index.css'
 import styles from './styles.module.css';
-import { MoonIcon, PenIcon, PersonStandingIcon, SunIcon } from 'lucide-react';
+import { MoonIcon, PenIcon, PersonStandingIcon, SunIcon, TriangleIcon } from 'lucide-react';
 import { useContext, useEffect, useState, type ReactNode } from 'react';
 
 import { Link } from 'react-router-dom';
@@ -29,13 +29,7 @@ export function Header() {
 
 
    function handleMenu(){
-     setActive(!isActive)
-     if(isActive){
-        const nav = document.querySelector('nav');
-        nav.style.display = 'none';  
-     } else {
-        nav.style.display = 'none';  
-     }
+    setActive(!isActive)
    }
 
   return(
@@ -44,10 +38,12 @@ export function Header() {
                 <h2>My Notebook</h2>
             </section>
 
+        <div className={styles.rightMenu}>  
         {isMediumOrLarger ? (
          <section >
-             <h2 onClick={handleMenu}>MENU</h2>
-             {isActive && <nav className={isActive ? `${styles.displayMenu} ${console.log(isActive)}` : `${styles.hidden}`}>
+             <h2 className={styles.menuTitle} onClick={handleMenu}>MENU </h2>
+             <div  className={isActive ? `${styles.display} ${styles.triangle}` : `${styles.hidden}`}></div>
+             {isActive && <nav className={isActive ? `${styles.displayMenu}` : `${styles.hidden}`}>
                     <Link to="/">
                         <HeaderTitle title="Cadastro de Produto">
                             <PenIcon/>
@@ -78,14 +74,25 @@ export function Header() {
             </section>
         )}
             
-             
-            <section>
+    {isMediumOrLarger ? (
+        <section>
                 <button type="submit"  className={styles.btnTheme} onClick={handleThemeChange}>
-                    <HeaderTitle title="Themes">
+                    <HeaderTitle title="">
                         {icons[theme]}
                     </HeaderTitle>  
                 </button>
-            </section>
+            </section>) : 
+            (
+        <section>
+            <button type="submit"  className={styles.btnTheme} onClick={handleThemeChange}>
+                <HeaderTitle title="Themes">
+                        {icons[theme]}
+                    </HeaderTitle>  
+            </button>
+        </section>
+    ) }
+            
+            </div>
         </div>
     );
 }

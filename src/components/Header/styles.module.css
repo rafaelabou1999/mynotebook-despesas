@@ -58,7 +58,6 @@ button{
 }
 
 .mobile{
-   font-size: 200px;
    color: red !important;
 }
 
@@ -71,17 +70,74 @@ button{
 
 @media screen and (max-width: 768px) {
     .compContainer{
-    width:100%;
+    width:100vw;
     height:10vh;
     background-color: var(--dark-medium);
-    color: var(--dark-light);
     padding: 2%;
     box-shadow: 1px 1px 2px #302f2f73;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
 }
 
    .logo{
     flex-direction: column;
     padding: 2%;
+
    }
 
+   .rightMenu{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    align-items: center;
+   }
+
+   .btnTheme{
+    padding:11% 11% 0 11%;
+        height:5vh;
+        width:95%;
+        color: red;
+        background-color: var(--solid-primary);
+    }
+    .displayMenu{
+        position: absolute;
+        top:85%;
+        right:3%;
+        width: 150px;
+        height:105px;
+        padding:2% 2% 2% 2%;
+        font-size: 10px;
+        background-color: rgb(231, 231, 231);
+        margin-left: 33%;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--dark-medium) !important;
+        border: 1px solid #c4bebe;
+        border-radius: 2px;
+    }
+
+    .menuTitle{
+        position: absolute;
+        top:50%;
+        right:15%;
+        transform: translateY(-50%);
+    }
+
+    .triangle{
+        width:0;
+        height:0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #a7a4a4;
+        position: absolute;
+        top:75%;
+        right:18%;
+
+    }
+
+    
 }
