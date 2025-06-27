@@ -180,7 +180,24 @@ button{
         height:22px;
     }
         
-
+    .btnTheme{
+        display: flex;
+        width:35px;
+        height:38px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0px;
+        position: relative;
+    }
+    .btnTheme svg{
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width:17px;
+        height:17px;
+    }
     :root[data-theme="dark"] nav a{
         color:var(--dark-medium) !important;
     }

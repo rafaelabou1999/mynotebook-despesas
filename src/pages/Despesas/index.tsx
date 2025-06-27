@@ -48,9 +48,9 @@ export function Despesas() {
           <tbody>
             {products.map((item, index) => (
               <tr key={index}>
-                <td >{item.name}</td>
+                <td className={styles.tdName}>{item.name}</td>
                 <td>{item.utility}</td>
-                <td colSpan={2} >R$ {item.value}</td>
+                <td className={styles.tdValue} colSpan={2} >R$ {item.value}</td>
                 <td  className={styles.deleteProduct} onClick={() => handleDelete(index)}><Trash2Icon/></td>
               </tr>
             ))}

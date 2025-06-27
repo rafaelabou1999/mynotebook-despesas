@@ -72,11 +72,11 @@ export function InputPost() {
     return (
         <div className={styles.container}>
           <div className={styles.item}>
-            <label>Nome da Despesa: </label>
+            <label>Despesa </label>
             <input ref={nameRef} className={styles.input} type="text" name="post" value={productName} onChange={e => setProductName(e.target.value)} required/>
           </div>
           <div className={styles.item}>
-            <label>Utilidade:</label>
+            <label>Utilidade</label>
             <select ref={utilityRef} name="" id="" onChange={e => setProductUtility(e.target.value)}>
               <option value="lazer">Lazer</option>
               <option value="trabalho">Trabalho</option>
@@ -84,7 +84,7 @@ export function InputPost() {
             </select>
           </div>
          <div className={styles.item}>
-           <label htmlFor="">Valor:</label>
+           <label htmlFor="">Valor</label>
            <input ref={valueRef} type="number" value={productValue} onChange={e => {
                 const val = e.target.value;
                 if (/^\d*$/.test(val)) {

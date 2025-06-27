@@ -10,8 +10,9 @@ table{
 }
 
 th{     
-    background-color: var(--dark-medium) !important;
+    background-color: #1f1e1eee !important;
     color:var(--dark-light);
+    border:2px solid #696262 !important;
 }
 th, td{
     padding: 8px 35px;
@@ -43,13 +44,13 @@ td{
 
 .total{
     text-align: end;
-    background-color: var(--dark-medium);
+    background-color: #1f1e1eee;
     color: var(--dark-light);
     font-weight: 600;
 }
 
 .finalValue{
-    background-color: var(--dark-medium);
+    background-color:#1f1e1eee;
     color: var(--solid-primary);
     font-weight: 600;
     font-size: 20px !important;
@@ -61,22 +62,30 @@ td{
     border: 1px solid #cfcdcd;
 }
 
-
+.tdValue{
+    padding: 0 36px;
+    text-align: start;
+}
 
 @media screen and (max-width: 640px) {
-    th,td{
-      padding: 1px 4.6vw;
-      font-size: 15px;
+    td{
+      font-size: 14px;
+      padding: 7px;
     }
 
+    th{
+    padding: 10px 4.6vw;
+    font-size: 14.5px;
+    }
     .finalValue{
         font-size: 17px !important;
     }
 
     table{
-         position: absolute;
+      position: absolute;
       left:50%;
       transform: translateX(-50%);
+      width: 90%;
     }
 
     .list{
