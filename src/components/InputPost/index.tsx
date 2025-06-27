@@ -85,7 +85,7 @@ export function InputPost() {
           </div>
          <div className={styles.item}>
            <label htmlFor="">Valor</label>
-           <input ref={valueRef} type="number" value={productValue} onChange={e => {
+           <input className={styles.inputNumber} ref={valueRef} type="number" value={productValue} onChange={e => {
                 const val = e.target.value;
                 if (/^\d*$/.test(val)) {
                   setProductValue(val);

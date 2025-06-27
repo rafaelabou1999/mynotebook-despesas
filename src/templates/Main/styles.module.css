@@ -14,7 +14,7 @@ footer{
     transform: translateX(-50%);
     font-weight: 600;
     width:100%;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 640px) {
