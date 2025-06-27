@@ -55,8 +55,8 @@ export function Despesas() {
               </tr>
             ))}
             <tr >
-              <td colSpan={2} className={`${styles.occult} ${styles.total}`}>Total:</td>
-              <td colSpan={3} className={styles.finalValue}>R$ {sumValue}</td>
+              <td colSpan={2} className={`${styles.occult} ${styles.total}`}></td>
+              <td colSpan={3} className={styles.finalValue}>Total: <span className={styles.valueNumber}>R$ {sumValue} </span></td>
             </tr>
           </tbody>
         </table>

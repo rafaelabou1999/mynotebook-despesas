@@ -35,8 +35,9 @@ label{
     border: 1px solid var(--solid-primary);
     margin-top: -1%;   
 }
-.input, .inputNumber{
-    background-color: rgb(230, 228, 228);
+
+.input, .inputNumber,.selectInput{
+    background-color: rgb(252, 252, 252) !important;
     width:220px;
     height:28px;
 }
@@ -73,7 +74,7 @@ label{
 }
 
 @media screen and (max-width:640px) {
-    .input, .inputNumber{
+    .input, .inputNumber, .selectInput{
         width:175px;
         height:25px;
     }
@@ -84,8 +85,7 @@ label{
 
     .btnInput{
         bottom:-35%;
-        right:-1%;
-        transform: translateX(-50%);
+        right:-12%;
         width:110px !important;
     }
 

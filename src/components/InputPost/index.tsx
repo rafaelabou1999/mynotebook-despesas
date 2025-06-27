@@ -62,6 +62,9 @@ export function InputPost() {
       }
     
       setSubmittedBtn(false);
+      setProductUtility('');
+      setProductName('');
+      setProductValue('');
     }
 
     localStorage.setItem('productName', productName);
@@ -77,7 +80,7 @@ export function InputPost() {
           </div>
           <div className={styles.item}>
             <label>Utilidade</label>
-            <select ref={utilityRef} name="" id="" onChange={e => setProductUtility(e.target.value)}>
+            <select className={styles.selectInput} ref={utilityRef} name="" id="" onChange={e => setProductUtility(e.target.value)}>
               <option value="lazer">Lazer</option>
               <option value="trabalho">Trabalho</option>
               <option value="alimentação">Alimentação</option>

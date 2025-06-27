@@ -10,9 +10,12 @@ table{
 }
 
 th{     
-    background-color: #1f1e1eee !important;
-    color:var(--dark-light);
-    border:2px solid #696262 !important;
+    background-color: #e7e7e7;
+    color:var(--dark-medium);
+    border:2px solid #e6e4e4 !important;
+}
+th{
+    color: #3b3a3a;
 }
 th, td{
     padding: 8px 35px;
@@ -44,16 +47,18 @@ td{
 
 .total{
     text-align: end;
-    background-color: #1f1e1eee;
+    background-color: #3b3a3ae3;
     color: var(--dark-light);
     font-weight: 600;
+    border: 1px solid transparent !important;
 }
 
 .finalValue{
-    background-color:#1f1e1eee;
-    color: var(--solid-primary);
+    background-color:#3b3a3ae3;
+    color: #f7f7f7;
     font-weight: 600;
     font-size: 20px !important;
+    border: 1px solid transparent !important;
 }
 
 .deleteProduct {
@@ -67,6 +72,9 @@ td{
     text-align: start;
 }
 
+.valueNumber{
+    padding-left: 5%;
+}
 @media screen and (max-width: 640px) {
     td{
       font-size: 14px;

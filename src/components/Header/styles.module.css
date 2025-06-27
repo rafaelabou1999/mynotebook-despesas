@@ -7,12 +7,15 @@
     box-shadow: 1px 1px 2px #302f2f73;
 }
 
+
 .logo{
     display: flex;
     flex-direction: row;
     gap:4%;
     padding: 18% 0;
     color: var(--solid-primary);
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .linkLogo {
@@ -27,7 +30,7 @@
 nav, nav a{
     color: var(--bg-solid) !important;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 nav a:hover{
@@ -35,9 +38,12 @@ nav a:hover{
 }
 
 .btnTheme{
-    padding:4% 2% 0 4%;
+    padding:4% 6% 0 4%;
     color: red;
     background-color: var(--solid-primary);
+    cursor: pointer;
+    border: 2px solid #979797;
+    font-size: 15px !important;
 }
 
 button{
@@ -111,7 +117,7 @@ button{
    .logo {
     flex-direction: column;
     padding: 2%;
-
+    font-size: 15px;
    }
 
    .rightMenu {
@@ -147,6 +153,7 @@ button{
         top:50%;
         right:15%;
         transform: translateY(-50%);
+        cursor: pointer;
     }
 
     nav {
